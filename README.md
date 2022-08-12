@@ -63,6 +63,7 @@ This file contains the data received from the specified URL: https://gist.github
 It was decided to keep the data local, and not grab the file from the network.  If grabbing it from the network is required, then the following code would be used.
 
 <code>
+
     enum ReadDataError: Error {
         case badResponseCode
     }
@@ -86,11 +87,13 @@ It was decided to keep the data local, and not grab the file from the network.  
             return nil
         }
     }
+    
 </code>
 
 instead of using...
 
 <code>
+
     public func countryData() -> Data? {
         do {
             let json = Bundle.main.url(forResource: "countries" as String?, withExtension: "json")
@@ -102,6 +105,7 @@ instead of using...
         }
         return nil
     }
+    
 </code>
 
 
